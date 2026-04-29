@@ -1,0 +1,15 @@
+section.tasks-list {
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.no-tasks-box {
+  text-transform: capitalize;
+  font-size: 1.3rem;
+  @extend %center-flex;
+  color: colors.$muted;
+  padding: 30px;
+}

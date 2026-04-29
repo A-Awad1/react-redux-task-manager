@@ -1,0 +1,32 @@
+@use "../helpers/variables/colors";
+
+html {
+  scroll-behavior: smooth;
+}
+
+$scroll: "::-webkit-scrollbar";
+#{$scroll} {
+  width: 3px;
+  height: 3px;
+  html > & {
+    width: 5px;
+    height: 5px;
+  }
+}
+#{$scroll}-track {
+  background-color: transparent;
+}
+#{$scroll}-thumb {
+  cursor: move;
+  background-color: colors.$scroll;
+  &:hover {
+    background-color: colors.$scroll;
+  }
+}
+
+@supports (-moz-appearance: none) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: colors.$scroll transparent;
+  }
+}

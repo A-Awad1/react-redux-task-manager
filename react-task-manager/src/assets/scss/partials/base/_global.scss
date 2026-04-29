@@ -1,0 +1,33 @@
+@use "../helpers/variables/colors";
+
+button,
+input[type="submit"] {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+label {
+  user-select: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: colors.$muted;
+}
+
+::selection {
+  background-color: colors.$accent;
+  color: colors.$light;
+}
+
+.priority {
+  &.high {
+    --color: #dc2626;
+  }
+  &.medium {
+    --color: #d97706;
+  }
+  &.low {
+    --color: #16a34a;
+  }
+}

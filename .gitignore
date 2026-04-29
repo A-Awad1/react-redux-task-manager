@@ -52,4 +52,4 @@ Thumbs.db
 *.pem
 .netlify
 
-/zone-draft
+zone-draft

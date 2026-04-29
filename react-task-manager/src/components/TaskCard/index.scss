@@ -1,0 +1,127 @@
+li.card {
+  padding: 20px 18px;
+  border-left: 7px solid var(--color);
+  display: flex;
+  justify-content: space-between;
+  gap: inherit;
+  @include medium {
+    padding: 22px 20px;
+  }
+  &.completed {
+    opacity: 0.8;
+    filter: grayscale(0.8);
+    p {
+      text-decoration: line-through;
+    }
+  }
+  &.editing {
+    padding-bottom: 35px;
+  }
+  > div {
+    display: flex;
+    align-items: center;
+    gap: inherit;
+    &:first-child {
+      flex: 1;
+      &:has(p) {
+        overflow: hidden;
+      }
+      div.check-box {
+        position: relative;
+        display: flex;
+        input {
+          appearance: none;
+          aspect-ratio: 1/1;
+          width: 22px;
+          border: 2px solid colors.$border;
+          border-radius: $third-border-radius;
+          cursor: pointer;
+          transition: $main-transition;
+          &:checked {
+            background-color: colors.$accent;
+            & + svg {
+              opacity: 1;
+            }
+          }
+        }
+        svg {
+          position: absolute;
+          width: 60%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          pointer-events: none;
+          cursor: pointer;
+          opacity: 0;
+        }
+      }
+      p {
+        font-size: 1.4rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: colors.$light;
+      }
+      .edit-box {
+        flex: 1;
+        position: relative;
+        display: flex;
+        textarea {
+          flex: 1;
+          background-color: transparent;
+          border: 1px solid colors.$accent;
+          border-radius: $second-border-radius;
+          font-size: 1.3rem;
+          padding: 10px;
+          color: colors.$light;
+          resize: none;
+          transition: $main-transition;
+        }
+        .radios {
+          position: absolute;
+          top: calc(100% + 12px);
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          gap: 12px;
+          > div {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            input {
+              appearance: none;
+              aspect-ratio: 1/1;
+              width: 14px;
+              border: 2px solid colors.$border;
+              border-radius: 50%;
+              &:checked {
+                background-color: var(--color);
+                border-color: var(--color);
+              }
+            }
+            label {
+              font-size: 1.2rem;
+              text-transform: lowercase;
+              color: var(--color);
+            }
+          }
+        }
+      }
+    }
+    &:last-child {
+      button {
+        width: 18px;
+        color: colors.$muted;
+        &:hover {
+          color: colors.$accent;
+          &.delete {
+            color: colors.$danger;
+          }
+        }
+        svg {
+          pointer-events: none;
+          transition: $main-transition;
+        }
+      }
+    }
+  }
+}

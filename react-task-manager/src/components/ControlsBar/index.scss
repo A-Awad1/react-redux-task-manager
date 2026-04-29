@@ -1,0 +1,69 @@
+section.controls-bar {
+  margin: 30px 0 15px;
+  padding: 14px 20px;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  @include xSmall {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @include medium {
+    margin: 40px 0 20px;
+  }
+  input[type="checkbox"] {
+    appearance: none;
+    aspect-ratio: 1/1;
+    width: 16px;
+    border: 2px solid colors.$border;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: $main-transition;
+    &:checked {
+      border-color: transparent;
+    }
+  }
+  > div {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    @include xSmall {
+      justify-content: flex-start;
+    }
+    &.priority-filter {
+      div {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        input[type="checkbox"]:checked {
+          background-color: var(--color);
+        }
+      }
+    }
+    &.done-controls {
+      div {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        input[type="checkbox"]:checked {
+          background-color: colors.$accent;
+        }
+      }
+      button {
+        text-transform: uppercase;
+        padding: 6px 12px;
+        color: colors.$danger;
+        border: 1px solid rgba(colors.$danger, 0.2);
+        border-radius: $second-border-radius;
+        transition: $main-transition;
+        &:hover {
+          background-color: colors.$danger;
+          color: colors.$light;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+section.app-content {
+  flex: 1;
+  h1 {
+    text-transform: uppercase;
+    color: colors.$accent;
+    line-height: 1.1;
+    border-left: 4px solid currentColor;
+    padding-left: 10px;
+    margin-bottom: 30px;
+    letter-spacing: 1.5px;
+    font: {
+      weight: initial;
+      size: 23px;
+    }
+    @include medium {
+      padding-left: 20px;
+      margin-bottom: 40px;
+      font-size: 36px;
+    }
+    span {
+      color: colors.$light;
+    }
+  }
+}
+
+.card {
+  border: 1px solid colors.$border;
+  border-radius: $main-border-radius;
+  background-color: colors.$second-bg;
+}

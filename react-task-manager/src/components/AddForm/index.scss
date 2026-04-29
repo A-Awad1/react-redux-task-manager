@@ -1,0 +1,97 @@
+section.add-form {
+  padding: 20px;
+  @include medium {
+    padding: 30px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @include medium {
+      gap: 25px;
+    }
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      @include medium {
+        gap: 12px;
+      }
+      label {
+        letter-spacing: 1.5px;
+      }
+      &:first-of-type {
+        textarea {
+          background-color: colors.$third-bg;
+          border: 1px solid colors.$border;
+          border-radius: $second-border-radius;
+          font-size: 1.3rem;
+          color: colors.$light;
+          resize: none;
+          transition: $main-transition;
+          padding: 12px 16px;
+          @include medium {
+            padding: 14px 18px;
+          }
+          &:focus {
+            border: 1px solid colors.$border;
+            box-shadow: 0 0 0 3px colors.$shadow;
+          }
+        }
+      }
+      &:last-of-type {
+        > div {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+          gap: 15px;
+          @include xSmall {
+            flex-direction: row;
+          }
+          > .priorities-wrapper {
+            background-color: colors.$third-bg;
+            border-radius: $second-border-radius;
+            display: flex;
+            justify-content: center;
+            padding: 6px;
+            gap: 8px;
+            div {
+              display: flex;
+              input {
+                appearance: none;
+                &:checked + label {
+                  color: colors.$white;
+                  background-color: var(--color);
+                }
+              }
+              label {
+                padding: 9px 12px;
+                border-radius: $third-border-radius;
+                transition: $main-transition;
+                letter-spacing: initial;
+              }
+            }
+          }
+          input[type="submit"] {
+            color: colors.$black;
+            background-color: colors.$accent;
+            border-radius: $second-border-radius;
+            transition: transform $main-transition;
+            height: 30px;
+            @include xSmall {
+              height: auto;
+              padding: 5px 30px;
+            }
+            font: {
+              size: 1.2rem;
+              weight: 500;
+            }
+            &:hover {
+              transform: translateY(-1px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
