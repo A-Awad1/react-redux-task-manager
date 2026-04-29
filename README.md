@@ -12,7 +12,7 @@ This project is fully responsive with Mobile First Approach
 
 ## Deployment Link
 
-**[Live Website]()**
+**[Live Website](https://tasks-manager-with-localstorage.netlify.app/)**
 
 ## Installation
 
