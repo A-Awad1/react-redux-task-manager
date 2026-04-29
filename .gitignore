@@ -1,0 +1,55 @@
+# Dependency
+node_modules
+dist
+dist-ssr
+build
+out
+.out
+.output
+.data
+.cache
+.next
+/coverage
+package-lock.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+yarn-debug.log*
+yarn-error.log*
+yarn.debug.log*
+yarn.error.log*
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Editor / IDE Settings
+.vscode
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+*.swo
+
+# Misc
+Thumbs.db
+.pnp
+.pnp.js
+.fleet
+.prettierignore
+*.local
+*.pem
+.netlify
+
+/zone-draft
